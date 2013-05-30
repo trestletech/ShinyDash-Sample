@@ -15,8 +15,8 @@ justgageOutput <- function(outputId, width, height) {
 shinyUI(bootstrapPage(
   h1("ShinyDash Example"),
   
-  gridster(width = 250, height = 250,
-    gridsterItem(col = 1, row = 1, sizex = 1, sizey = 1,
+  gridster(tile.width = 250, tile.height = 250,
+    gridsterItem(col = 1, row = 1, size.x = 1, size.y = 1,
                 
                 sliderInput("rate", "Rate of growth:",
                             min = -0.25, max = .25, value = .02, step = .01),
@@ -32,19 +32,19 @@ shinyUI(bootstrapPage(
                   tags$a(href = "https://github.com/wch/shiny-jsdemo", "Source code")
                 )
     ),
-    gridsterItem(col = 2, row = 1, sizex = 2, sizey = 1,
+    gridsterItem(col = 2, row = 1, size.x = 2, size.y = 1,
                 tags$div(id = "live_highchart",
                          style="min-width: 200px; height: 230px; margin: 0 auto"
                 )
     ),
-    gridsterItem(col = 1, row = 2, sizex = 1, sizey = 1,
+    gridsterItem(col = 1, row = 2, size.x = 1, size.y = 1,
                 justgageOutput("live_gauge", width=250, height=200)
     ),
-    gridsterItem(col = 2, row = 2, sizex = 1, sizey = 1,
+    gridsterItem(col = 2, row = 2, size.x = 1, size.y = 1,
                 tags$div(class = 'grid_title', 'Status'),
                 statusOutput('status')
     ),
-    gridsterItem(col = 3, row = 2, sizex = 1, sizey = 1,
+    gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
                 plotOutput("plotout", height = 250)
     )
   )

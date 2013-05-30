@@ -29,7 +29,7 @@ shinyUI(bootstrapPage(
                 
                 tags$p(
                   tags$br(),
-                  tags$a(href = "https://github.com/wch/shiny-jsdemo", "Source code")
+                  tags$a(href = "https://github.com/trestletech/ShinyDash-Sample", "Source code")
                 )
     ),
     gridsterItem(col = 2, row = 1, size.x = 2, size.y = 1,

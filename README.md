@@ -1,7 +1,7 @@
 ShinyDash-Sample
 ================
 
-Example shiny app built on the ShinyDash package.
+Example shiny app built on the [ShinyDash](https://github.com/trestletech/ShinyDash) package. This application is hosted online at http://spark.rstudio.com/trestletech/ShinyDash-Sample/.
 
 Credits
 =======

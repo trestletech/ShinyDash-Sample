@@ -7,10 +7,6 @@ statusOutput <- function(outputId) {
   )
 }
 
-justgageOutput <- function(outputId, width, height) {
-  tags$div(id = outputId, class = "justgage_output", style = sprintf("width:%dpx; height:%dpx", width, height))
-}
-
 
 shinyUI(bootstrapPage(
   h1("ShinyDash Example"),
@@ -38,7 +34,7 @@ shinyUI(bootstrapPage(
                 )
     ),
     gridsterItem(col = 1, row = 2, size.x = 1, size.y = 1,
-                justgageOutput("live_gauge", width=250, height=200)
+                gaugeOutput("live_gauge", width=250, height=200)
     ),
     gridsterItem(col = 2, row = 2, size.x = 1, size.y = 1,
                 tags$div(class = 'grid_title', 'Status'),

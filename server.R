@@ -63,7 +63,7 @@ shinyServer(function(input, output, session) {
       type = "updateHighchart", 
       message = list(
         # Name of chart to update
-        name = "live_highchart",
+        name = "live_line_graph",
         # Send UTC timestamp as a string so we can specify arbitrary precision
         # (large numbers get converted to scientific notation and lose precision)
         x = sprintf("%15.3f", as.numeric(Sys.time()) * 1000),

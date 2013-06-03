@@ -60,7 +60,7 @@ shinyServer(function(input, output, session) {
   # Send custom message (as JSON) to a handler on the client
   observe({
     session$sendCustomMessage(
-      type = "updateHighchart", 
+      type = "updateRickshaw", 
       message = list(
         # Name of chart to update
         name = "live_line_graph",

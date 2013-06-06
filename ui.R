@@ -30,7 +30,7 @@ shinyUI(bootstrapPage(
     ),
     gridsterItem(col = 2, row = 1, size.x = 2, size.y = 1,
                 lineGraphOutput("live_line_graph",
-                         width=532, height=250, axisType="time", legend=FALSE
+                         width=532, height=250, axisType="time", legend=TRUE
                 )
     ),
     gridsterItem(col = 1, row = 2, size.x = 1, size.y = 1,

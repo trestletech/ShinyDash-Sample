@@ -66,7 +66,7 @@ shinyServer(function(input, output, session) {
         name = "live_line_graph",
         # Send UTC timestamp as a string so we can specify arbitrary precision
         # (large numbers get converted to scientific notation and lose precision)
-        x = sprintf("%15.3f", as.numeric(Sys.time()) * 1000),
+        x = sprintf("%15.3f", as.numeric(Sys.time())),
         # Most recent value
         y0 = last(values()),
         # Smoothed value (average of last 10)

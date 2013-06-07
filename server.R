@@ -23,15 +23,7 @@ shinyServer(function(input, output, session) {
   })
   
   
-  # Generate histogram
-  output$plotout <- renderPlot({
-    hist(values(), col = "#cccccc",
-         main = paste("Last", length(values()), "values"),
-         xlab = paste("Mean =", round(mean(values()), 1))
-    )
-    
-    abline(v = mean(values()), col = "red", lwd = 2, lt = 2)
-  })
+  output$weatherWidget <- renderWeather(2487956, session=session)
   
   # Set the value for the gauge
   # When this reactive expression is assigned to an output object, it is

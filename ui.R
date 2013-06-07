@@ -35,7 +35,7 @@ shinyUI(bootstrapPage(
                                  tags$p(id="subtext"))
     ),
     gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
-                plotOutput("plotout", height = 250)
+                weatherWidgetOutput("weatherWidget", width="100%", height="90%")
     )
   )
 ))

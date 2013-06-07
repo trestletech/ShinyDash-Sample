@@ -58,20 +58,12 @@ shinyServer(function(input, output, session) {
   
   # Update the latest value on the graph
   # Send custom message (as JSON) to a handler on the client
-  observe({
-    session$sendCustomMessage(
-      type = "updateRickshaw", 
-      message = list(
-        # Name of chart to update
-        name = "live_line_graph",
-        # Send UTC timestamp as a string so we can specify arbitrary precision
-        # (large numbers get converted to scientific notation and lose precision)
-        x = sprintf("%15.3f", as.numeric(Sys.time())),
-        # Most recent value
-        y0 = last(values()),
-        # Smoothed value (average of last 10)
-        y1 = mean(last(values(), n = 10))
-      )
+  sendGraphData("live_line_graph", {
+    list(
+      # Most recent value
+      y0 = last(values()),
+      # Smoothed value (average of last 10)
+      y1 = mean(last(values(), n = 10))
     )
   })
   

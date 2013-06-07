@@ -47,10 +47,10 @@ shinyServer(function(input, output, session) {
   output$status <- reactive({
     running_mean <- mean(last(values(), n = 10))
     if (running_mean > 200)
-      list(text="Past limit", gridClass="alert")
+      list(text="Past limit", widgetState="alert", subtext="")
     else if (running_mean > 150)
       list(text="Warn", subtext = "Mean of last 10 approaching threshold (200)",
-           gridClass="warning")
+           widgetState="warning")
     else
       list(text="OK", subtext="Mean of last 10 below threshold (200)")
   })

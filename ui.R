@@ -1,13 +1,5 @@
 library(ShinyDash)
 
-statusOutput <- function(outputId) {
-  tags$div(id=outputId, class="status_output",
-           tags$div(class = 'grid_bigtext'),
-           tags$p()
-  )
-}
-
-
 shinyUI(bootstrapPage(
   h1("ShinyDash Example"),
   
@@ -38,7 +30,9 @@ shinyUI(bootstrapPage(
     ),
     gridsterItem(col = 2, row = 2, size.x = 1, size.y = 1,
                 tags$div(class = 'grid_title', 'Status'),
-                statusOutput('status')
+                htmlWidgetOutput('status', 
+                                 tags$div(id="text", class = 'grid_bigtext'),
+                                 tags$p(id="subtext"))
     ),
     gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
                 plotOutput("plotout", height = 250)

@@ -33,7 +33,7 @@ shinyServer(function(input, output, session) {
   # Set the value for the gauge
   # When this reactive expression is assigned to an output object, it is
   # automatically wrapped into an observer (i.e., a reactive endpoint)
-  output$live_gauge <- reactive({
+  output$live_gauge <- renderGauge({
     running_mean <- mean(last(values(), n = 10))
     round(running_mean, 1)
   })

@@ -1,3 +1,8 @@
+library(shiny)
+library(ShinyDash)
+library(XML)
+library(httr)
+
 shinyServer(function(input, output, session) {
   
   all_values <- 100  # Start with an initial value 100

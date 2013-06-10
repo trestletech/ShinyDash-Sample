@@ -34,7 +34,7 @@ shinyUI(bootstrapPage(
                 htmlWidgetOutput('status', 
                                  tags$div(id="text", class = 'grid_bigtext'),
                                  tags$p(id="subtext"),
-                                 tags$p(id="value"))
+                                 tags$p(id="value", `data-filter`="round 3 | prepend '$' | append ' profit per sale'"))
     ),
     gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
                 weatherWidgetOutput("weatherWidget", width="100%", height="90%")

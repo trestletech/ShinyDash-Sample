@@ -27,14 +27,14 @@ shinyUI(bootstrapPage(
                 )
     ),
     gridsterItem(col = 1, row = 2, size.x = 1, size.y = 1,
-                gaugeOutput("live_gauge", width=250, height=200)
+                gaugeOutput("live_gauge", width=250, height=200, units="CPU", min=0, max=200, title="Cost per Unit")
     ),
     gridsterItem(col = 2, row = 2, size.x = 1, size.y = 1,
                 tags$div(class = 'grid_title', 'Status'),
                 htmlWidgetOutput('status', 
                                  tags$div(id="text", class = 'grid_bigtext'),
                                  tags$p(id="subtext"),
-                                 tags$p(id="value", `data-filter`="round 3 | prepend '$' | append ' profit per sale'"))
+                                 tags$p(id="value", `data-filter`="round 2 | prepend '$' | append ' cost per unit'"))
     ),
     gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
                 weatherWidgetOutput("weatherWidget", width="100%", height="90%")

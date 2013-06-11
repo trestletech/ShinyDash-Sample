@@ -23,7 +23,7 @@ shinyUI(bootstrapPage(
     ),
     gridsterItem(col = 2, row = 1, size.x = 2, size.y = 1,
                 lineGraphOutput("live_line_graph",
-                         width=532, height=250, axisType="time", legend=TRUE
+                         width=532, height=250, axisType="time", legend="topleft"
                 )
     ),
     gridsterItem(col = 1, row = 2, size.x = 1, size.y = 1,
@@ -34,7 +34,9 @@ shinyUI(bootstrapPage(
                 htmlWidgetOutput('status', 
                                  tags$div(id="text", class = 'grid_bigtext'),
                                  tags$p(id="subtext"),
-                                 tags$p(id="value", `data-filter`="round 2 | prepend '$' | append ' cost per unit'"))
+                                 tags$p(id="value", 
+                                        `data-filter`="round 2 | prepend '$' | append ' cost per unit'",
+                                        `class`="numeric"))
     ),
     gridsterItem(col = 3, row = 2, size.x = 1, size.y = 1,
                 weatherWidgetOutput("weatherWidget", width="100%", height="90%")

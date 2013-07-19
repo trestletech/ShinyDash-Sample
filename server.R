@@ -15,8 +15,7 @@ shinyServer(function(input, output, session) {
     invalidateLater(input$delay, session)
     
     # Generate a new number
-    new_value <- isolate(last(all_values) * 
-                           (1 + input$rate + runif(1, min = -input$volatility, max = input$volatility)))
+    isolate(new_value <- last(all_values) * (1 + input$rate + runif(1, min = -input$volatility, max = input$volatility)))
     
     # Append to all_values
     all_values <<- c(all_values, new_value)

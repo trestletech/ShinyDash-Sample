@@ -27,7 +27,7 @@ shinyServer(function(input, output, session) {
   })
   
   
-  output$weatherWidget <- renderWeather(2487956, session=session)
+  output$weatherWidget <- renderWeather(2487956, "f", session=session)
   
   # Set the value for the gauge
   # When this reactive expression is assigned to an output object, it is
